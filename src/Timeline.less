@@ -1,0 +1,108 @@
+/**
+ * Timeline Component Style for uxcore
+ * @author muwen.lb
+ *
+ * Copyright 2015-2016, Uxcore Team, Alinw.
+ * All rights reserved.
+ */
+
+
+@timeline-color: #F60;
+
+.kuma-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &-item {
+    position: relative;
+    padding: 0 0 12px 0;
+    list-style: none;
+    margin: 0;
+
+    &-tail {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      height: 100%;
+      border-left: 2px solid @timeline-color;
+    }
+
+    &-pending &-tail {
+      display: none;
+    }
+
+    &-head {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background-color: #FFF;
+      &-icon {
+        width: 12px;
+        height: 12px;
+        margin: 5px;
+        border-radius: 50%;
+      }
+    }
+
+    &-head-custom {
+      position: absolute;
+      text-align: center;
+      width: 40px;
+      left: -14px;
+      line-height: 1;
+      margin-top: 6px;
+      border: 0;
+      height: auto;
+      border-radius: 0;
+      padding: 3px 0;
+      font-size: 12px;
+      transform: translateY(-50%);
+    }
+
+    &-content {
+      padding: 5px 0 10px 30px;
+      position: relative;
+      top: -3px;
+    }
+
+    &-last {
+      .kuma-timeline-item-tail {
+        border-left: 2px dotted @timeline-color;
+        display: none;
+      }
+      .kuma-timeline-item-content {
+        min-height: 48px;
+      }
+    }
+  }
+  &-item-orange &-item-head &-item-head-icon{
+    background-color: #F60;
+  }
+  &-item-red &-item-head &-item-head-icon{
+    background-color: #F50;
+  }
+  &-item-blue &-item-head &-item-head-icon{
+    background-color: #2db7f5;
+  }
+  &-item-green &-item-head &-item-head-icon{
+    background-color: #87d068;
+  }
+
+  &-item-orange &-item-tail{
+    border-color: #F60;
+  }
+  &-item-red &-item-tail{
+    border-color: #F50;
+  }
+  &-item-blue &-item-tail{
+    border-color: #2db7f5;
+  }
+  &-item-green &-item-tail{
+    border-color: #87d068;
+  }
+
+  &-pending &-item-last &-item-tail {
+    display: block;
+  }
+}
