@@ -75,20 +75,25 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 
 ```jsx
 <Timeline>
-    <Timeline.Item jsxhead={<span>2014-09-09</span>}>
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
-        <p>content</p>
-    </Timeline.Item>
-    <Timeline.Item color="green">
-        Solve initial network problems 2015-09-01
-    </Timeline.Item>
-    <Timeline.Item color="red">
-        Technical testing 2015-09-01
+    <Timeline.Item>
+        <p>2016-10-25</p>
+        <p>content1</p>
+        <p>content1</p>
     </Timeline.Item>
     <Timeline.Item>
-        Network problems being solved 2015-09-01
+        <p>2016-10-25</p>
+        <p>content1</p>
+        <p>content1</p>
+    </Timeline.Item>
+    <Timeline.Item color="gray">
+        <p>2016-10-28</p>
+        <p>content4</p>
+        <p>content4</p>
+    </Timeline.Item>
+    <Timeline.Item color="gray">
+        <p>2016-10-28</p>
+        <p>content4</p>
+        <p>content4</p>
     </Timeline.Item>
 </Timeline>
 ```
@@ -111,6 +116,5 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 | Name | Type | Required | Default | Comments |
 |---|---|---|---|---|
 | className | String | false | 无 | 额外类名 |
-| color | String | false | orange | 指定圆圈颜色 `orange, blue, red, green`，或自定义的色值 |
-| jsxhead | jsx | false | 无 | 时间轴的表头，一般为日期，格式自定义 |
+| color | String | false | orange | 指定圆圈颜色 `orange, blue, gray, green`，或自定义的色值 |
 | dot | jsx | false | 无 | 自定义时间轴点 |
