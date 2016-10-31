@@ -36,25 +36,20 @@ class TimelineItem extends React.Component {
         <div
           className="kuma-timeline-item-tail"
           style={{
-            borderColor: /orange|blue|red|green/.test(me.props.color) ? null : me.props.color,
+            borderColor: /orange|blue|gray|green/.test(me.props.color) ? null : me.props.color,
           }}
         />
         <div className={dotClassName} >
           <div
             className="kuma-timeline-item-head-icon"
             style={{
-              backgroundColor: /orange|blue|red|green/.test(me.props.color) ? null : me.props.color,
+              backgroundColor: /orange|blue|gray|green/.test(me.props.color) ? null : me.props.color,
             }}
           >
             {me.state.dot}
           </div>
         </div>
         <div className="kuma-timeline-item-content">
-          {
-            me.props.jsxhead ? <div>
-              {me.props.jsxhead}
-            </div> : null
-          }
           {me.props.children}
         </div>
       </li>
