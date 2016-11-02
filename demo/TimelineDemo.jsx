@@ -67,7 +67,7 @@ class Demo extends React.Component {
           </Timeline.Item>
         </Timeline>
         额外添加item（虚线条）：
-        <Timeline pending={<a href="#">To do</a>}>
+        <Timeline pending={<a>To do</a>}>
           <Timeline.Item>
             <p>2016-10-25</p>
             <p>content1</p>

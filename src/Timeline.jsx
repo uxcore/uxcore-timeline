@@ -41,6 +41,11 @@ Timeline.defaultProps = {
 
 Timeline.propTypes = {
   className: React.PropTypes.string,
+  pending: React.PropTypes.oneOfType([
+    React.PropTypes.element,
+    React.PropTypes.string,
+    React.PropTypes.number,
+  ]),
 };
 
 Timeline.Item = TimelineItem;
