@@ -27,7 +27,7 @@ class Timeline extends React.Component {
               last: idx === me.props.children.length - 1,
             }))
           }
-          {(pending) ? <TimelineItem pending>{pending}</TimelineItem> : null}
+          {(pending) ? <TimelineItem pending color="gray">{pending}</TimelineItem> : null}
         </ul>
       </div>
     );

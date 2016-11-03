@@ -68,7 +68,6 @@
 
     &-last {
       .kuma-timeline-item-tail {
-        border-left: 2px dotted @timeline-color;
         display: none;
       }
       .kuma-timeline-item-content {
@@ -88,7 +87,6 @@
   &-item-green &-item-head &-item-head-icon{
     background-color: #87d068;
   }
-
   &-item-orange &-item-tail{
     border-color: #F60;
   }
@@ -101,8 +99,10 @@
   &-item-green &-item-tail{
     border-color: #87d068;
   }
-
-  &-pending &-item-last &-item-tail {
+  &-pending &-item-last &-item-tail{
     display: block;
+  }
+  &-item-dotted &-item-tail{
+    border-left-style: dotted;
   }
 }

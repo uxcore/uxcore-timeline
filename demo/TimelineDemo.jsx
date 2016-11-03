@@ -28,14 +28,14 @@ class Demo extends React.Component {
             <p>content1</p>
           </Timeline.Item>
           <Timeline.Item>
-            <p>2016-10-25</p>
-            <p>content1</p>
-            <p>content1</p>
+            <p>2016-10-26</p>
+            <p>content2</p>
+            <p>content2</p>
           </Timeline.Item>
           <Timeline.Item color="gray">
-            <p>2016-10-28</p>
-            <p>content4</p>
-            <p>content4</p>
+            <p>2016-10-27</p>
+            <p>content3</p>
+            <p>content3</p>
           </Timeline.Item>
           <Timeline.Item color="gray">
             <p>2016-10-28</p>
@@ -66,7 +66,7 @@ class Demo extends React.Component {
             <p>content4</p>
           </Timeline.Item>
         </Timeline>
-        额外添加item（虚线条）：
+        额外添加item：
         <Timeline pending={<a>To do</a>}>
           <Timeline.Item>
             <p>2016-10-25</p>

@@ -22,6 +22,7 @@ class TimelineItem extends React.Component {
       'kuma-timeline-item': true,
       'kuma-timeline-item-last': me.props.last,
       'kuma-timeline-item-pending': me.props.pending,
+      'kuma-timeline-item-dotted': me.props.dotted,
       [`kuma-timeline-item-${me.props.color}`]: true,
       [me.props.className]: me.props.className,
     });
@@ -64,7 +65,7 @@ TimelineItem.defaultProps = {
   className: '', // 额外的className
   last: false, // 是否最后一个
   color: 'orange',  // 圆圈颜色,blue/red/green
-  // dot: false //自定义圆圈图标
+  dotted: false, // 自定义实线虚线
 
 };
 
@@ -74,7 +75,7 @@ TimelineItem.propTypes = {
   className: React.PropTypes.string,
   last: React.PropTypes.bool,
   color: React.PropTypes.string,
-  // dot: React.PropTypes.element
+  dotted: React.PropTypes.bool,
 };
 
 TimelineItem.displayName = 'Timeline';
