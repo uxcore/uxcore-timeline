@@ -6,10 +6,10 @@
  * All rights reserved.
  */
 
-
+@prefix-cls: kuma-timeline;
 @timeline-color: #F60;
 
-.kuma-timeline {
+.@{prefix-cls} {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -67,16 +67,16 @@
     }
 
     &-last {
-      .kuma-timeline-item-tail {
+      .@{prefix-cls}-item-tail {
         display: none;
       }
-      .kuma-timeline-item-content {
+      .@{prefix-cls}-item-content {
         min-height: 48px;
       }
     }
   }
   &-item-orange &-item-head &-item-head-icon{
-    background-color: #F60;
+    background-color: @timeline-color;
   }
   &-item-gray &-item-head &-item-head-icon{
     background-color: #dbdbdb;
@@ -88,7 +88,7 @@
     background-color: #87d068;
   }
   &-item-orange &-item-tail{
-    border-color: #F60;
+    border-color: @timeline-color;
   }
   &-item-gray &-item-tail{
     border-color: #dbdbdb;

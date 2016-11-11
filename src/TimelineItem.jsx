@@ -18,31 +18,30 @@ class TimelineItem extends React.Component {
 
   render() {
     const me = this;
+    const prefixCls = me.props.prefixCls;
     const itemClassName = classnames({
-      'kuma-timeline-item': true,
-      'kuma-timeline-item-last': me.props.last,
-      'kuma-timeline-item-pending': me.props.pending,
-      'kuma-timeline-item-dotted': me.props.dotted,
-      [`kuma-timeline-item-${me.props.color}`]: true,
+      [`${prefixCls}-item`]: true,
+      [`${prefixCls}-item-last`]: me.props.last,
+      [`${prefixCls}-item-pending`]: me.props.pending,
+      [`${prefixCls}-item-dotted`]: me.props.dotted,
+      [`${prefixCls}-item-${me.props.color}`]: true,
       [me.props.className]: me.props.className,
     });
 
     const dotClassName = classnames({
-      'kuma-timeline-item-head': true,
-      'kuma-timeline-item-head-custom': me.state.dot,
+      [`${prefixCls}-item-head`]: true,
+      [`${prefixCls}-item-head-custom`]: me.state.dot,
     });
 
     return (
       <li className={itemClassName}>
-        <div
-          className="kuma-timeline-item-tail"
+        <div className={`${prefixCls}-item-tail`}
           style={{
             borderColor: /orange|blue|gray|green/.test(me.props.color) ? null : me.props.color,
           }}
         />
         <div className={dotClassName} >
-          <div
-            className="kuma-timeline-item-head-icon"
+          <div className={`${prefixCls}-item-head-icon`}
             style={{
               backgroundColor: /orange|blue|gray|green/.test(me.props.color) ? null : me.props.color,
             }}
@@ -50,7 +49,7 @@ class TimelineItem extends React.Component {
             {me.state.dot}
           </div>
         </div>
-        <div className="kuma-timeline-item-content">
+        <div className={`${prefixCls}-item-content`}>
           {me.props.children}
         </div>
       </li>
