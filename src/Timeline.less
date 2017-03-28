@@ -7,68 +7,43 @@
  */
 
 @prefix-cls: kuma-timeline;
-@timeline-color: #F60;
 
 .@{prefix-cls} {
-  list-style: none;
-  margin: 0 0 -13px;
-  padding: 0 0 13px;
+  color: @text-primary-color;
 
   &-item {
     position: relative;
-    padding: 0 0 2px 0;
-    list-style: none;
-    margin: 22px 0 0;
+    padding: 0 0 0 20px;
 
-    &-tail {
+    &-line {
       position: absolute;
-      left: 10px;
-      top: 0;
+      left: 3px;
+      top: 5px;
       height: 100%;
-      border-left: 2px solid @timeline-color;
+      border-left: 2px solid @normal-alpha-7;
     }
 
-    &-pending &-tail {
-      display: none;
-    }
-
-    &-head {
+    &-icon {
       position: absolute;
-      top: -22px;
-      width: 22px;
-      height: 22px;
-      background-color: transparent;
-      &-icon {
-        width: 12px;
-        height: 12px;
-        margin: 5px;
-        border-radius: 50%;
-      }
+      top: 5px;
+      left: 1px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: #FFF 1px solid;
+      background-color: @normal-alpha-4;
     }
 
-    &-head-custom {
-      position: absolute;
-      text-align: center;
-      width: 40px;
-      left: -14px;
-      line-height: 1;
-      margin-top: 6px;
-      border: 0;
-      height: auto;
-      border-radius: 0;
-      padding: 3px 0;
-      font-size: 12px;
-      transform: translateY(-50%);
+    &-title {
+      padding-bottom: 10px;
     }
 
     &-content {
-      padding: 0 0 3px 30px;
-      position: relative;
-      top: -20px;
+      padding: 0 0 10px;
     }
 
     &-last {
-      .@{prefix-cls}-item-tail {
+      .@{prefix-cls}-item-line {
         display: none;
       }
       .@{prefix-cls}-item-content {
@@ -76,34 +51,16 @@
       }
     }
   }
-  &-item-orange &-item-head &-item-head-icon{
-    background-color: @timeline-color;
+  &-item-active &-item-icon{
+    width: 8px;
+    height: 8px;
+    left: 0;
+    background-color: @brand-primary;
   }
-  &-item-gray &-item-head &-item-head-icon{
-    background-color: #dbdbdb;
+  &-item-active &-item-line{
+    background-color: @brand-primary;
   }
-  &-item-blue &-item-head &-item-head-icon{
-    background-color: #2db7f5;
-  }
-  &-item-green &-item-head &-item-head-icon{
-    background-color: #87d068;
-  }
-  &-item-orange &-item-tail{
-    border-color: @timeline-color;
-  }
-  &-item-gray &-item-tail{
-    border-color: #dbdbdb;
-  }
-  &-item-blue &-item-tail{
-    border-color: #2db7f5;
-  }
-  &-item-green &-item-tail{
-    border-color: #87d068;
-  }
-  &-pending &-item-last &-item-tail{
-    display: block;
-  }
-  &-item-dotted &-item-tail{
-    border-left-style: dotted;
+  &-item-active &-item-title{
+    color: @brand-primary;
   }
 }
