@@ -23,6 +23,10 @@
       border-left: 2px solid @normal-alpha-7;
     }
 
+    &-pending &-tail {
+      display: none;
+    }
+
     &-icon {
       position: absolute;
       top: 5px;
@@ -32,6 +36,16 @@
       border-radius: 50%;
       border: #FFF 1px solid;
       background-color: @normal-alpha-4;
+    }
+
+    &-icon-custom {
+      top: -2px;
+      left: -4px;
+      border: 0;
+      border-radius: 0;
+      background-color: #FFF;
+      width: auto;
+      height: auto;
     }
 
     &-title {
@@ -46,16 +60,32 @@
       .@{prefix-cls}-item-line {
         display: none;
       }
-      .@{prefix-cls}-item-content {
-        min-height: 48px;
-      }
     }
+  }
+
+  &-pending &-item-last &-item-line{
+    display: block;
+    border-left-style: dotted;
+  }
+  &-item-pending &-item-line{
+    display: none;
+  }
+  &-item-dotted &-item-line{
+    border-left-style: dotted;
   }
   &-item-active &-item-icon{
     width: 8px;
     height: 8px;
     left: 0;
     background-color: @brand-primary;
+  }
+  &-item-active &-item-icon-custom {
+    left: -4px;
+    border-radius: 0;
+    background-color: #FFF;
+    width: auto;
+    height: auto;
+    color: @brand-primary;
   }
   &-item-active &-item-line{
     background-color: @brand-primary;

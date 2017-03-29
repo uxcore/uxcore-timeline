@@ -7,6 +7,7 @@
  */
 
 const React = require('react');
+const Icon = require('uxcore-icon');
 const Timeline = require('../src');
 
 class Demo extends React.Component {
@@ -48,7 +49,7 @@ class Demo extends React.Component {
               <p>content1</p>
               <p>content1</p>
             </Timeline.Item>
-            <Timeline.Item active title="2016-10-26 星期二">
+            <Timeline.Item title="2016-10-26 星期二" active>
               <p>content2</p>
               <p>content2</p>
             </Timeline.Item>
@@ -74,6 +75,25 @@ class Demo extends React.Component {
             <Timeline.Item color="red" title="2016-10-27 星期三">
               <p>content4</p>
               <p>content4</p>
+            </Timeline.Item>
+          </Timeline>
+        </div>
+        <div style={{ display: 'inline-block', verticalAlign: 'top', margin: '50px' }}>
+          扩展功能：附加节点、虚线模式、自定义icon
+          <br />
+          <br />
+          <Timeline pending={<a>To do</a>}>
+            <Timeline.Item title="2016-10-25 星期一" dotted>
+              <p>content1</p>
+              <p>content1</p>
+            </Timeline.Item>
+            <Timeline.Item title="2016-10-26 星期二" dot={<Icon name="shezhi" />}>
+              <p>content2</p>
+              <p>content2</p>
+            </Timeline.Item>
+            <Timeline.Item title="2016-10-27 星期三">
+              <p>content3</p>
+              <p>content3</p>
             </Timeline.Item>
           </Timeline>
         </div>

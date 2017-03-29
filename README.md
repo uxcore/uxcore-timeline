@@ -79,7 +79,7 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
         <p>content1</p>
         <p>content1</p>
     </Timeline.Item>
-    <Timeline.Item active title='2016-10-26'>
+    <Timeline.Item title='2016-10-26' active>
         <p>content2</p>
         <p>content2</p>
     </Timeline.Item>
@@ -99,6 +99,7 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 | Name | Type | Required | Default | Comments |
 |---|---|---|---|---|
 | className | String | false | 无 | 额外类名 |
+| pending | jsx | false | 无 | 指定最后一个幽灵节点内容 |
 
 ### Timeline.Item
 
@@ -107,6 +108,8 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 | Name | Type | Required | Default | Comments |
 |---|---|---|---|---|
 | className | String | false | 无 | 额外类名 |
+| color | String | false | 无 | 指定节点的色调 `orange, blue, gray, green`，或自定义的色值 |
+| dot | jsx | false | 无 | 自定义时间轴点 |
+| dotted | Boolean | false | false | 虚线连接线 |
 | active | Boolean | false | false | 指定当前时间节点or处理中状态 |
 | title | String | false | 无 | 节点的标题 |
-| color | String | false | 无 | 指定节点的色调 `orange, blue, gray, green`，或自定义的色值 |
