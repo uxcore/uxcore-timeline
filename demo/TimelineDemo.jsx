@@ -7,6 +7,7 @@
  */
 
 const React = require('react');
+const Icon = require('uxcore-icon');
 const Timeline = require('../src');
 
 class Demo extends React.Component {
@@ -20,75 +21,82 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
-        普通使用：
-        <Timeline>
-          <Timeline.Item>
-            <p>2016-10-25</p>
-            <p>content1</p>
-            <p>content1</p>
-          </Timeline.Item>
-          <Timeline.Item>
-            <p>2016-10-26</p>
-            <p>content2</p>
-            <p>content2</p>
-          </Timeline.Item>
-          <Timeline.Item color="gray">
-            <p>2016-10-27</p>
-            <p>content3</p>
-            <p>content3</p>
-          </Timeline.Item>
-          <Timeline.Item color="gray">
-            <p>2016-10-28</p>
-            <p>content4</p>
-            <p>content4</p>
-          </Timeline.Item>
-        </Timeline>
-        各种颜色线条（可自定义）：
-        <Timeline>
-          <Timeline.Item>
-            <p>2016-10-25</p>
-            <p>content1</p>
-            <p>content1</p>
-          </Timeline.Item>
-          <Timeline.Item color="green">
-            <p>2016-10-26</p>
-            <p>content2</p>
-            <p>content2</p>
-          </Timeline.Item>
-          <Timeline.Item color="blue">
-            <p>2016-10-27</p>
-            <p>content3</p>
-            <p>content3</p>
-          </Timeline.Item>
-          <Timeline.Item color="gray">
-            <p>2016-10-28</p>
-            <p>content4</p>
-            <p>content4</p>
-          </Timeline.Item>
-        </Timeline>
-        额外添加item：
-        <Timeline pending={<a>To do</a>}>
-          <Timeline.Item>
-            <p>2016-10-25</p>
-            <p>content1</p>
-            <p>content1</p>
-          </Timeline.Item>
-          <Timeline.Item color="green">
-            <p>2016-10-26</p>
-            <p>content2</p>
-            <p>content2</p>
-          </Timeline.Item>
-          <Timeline.Item color="blue">
-            <p>2016-10-27</p>
-            <p>content3</p>
-            <p>content3</p>
-          </Timeline.Item>
-          <Timeline.Item color="gray">
-            <p>2016-10-28</p>
-            <p>content4</p>
-            <p>content4</p>
-          </Timeline.Item>
-        </Timeline>
+        <div style={{ display: 'inline-block', verticalAlign: 'top', margin: '50px' }}>
+          普通使用
+          <br />
+          <br />
+          <Timeline>
+            <Timeline.Item title="2016-10-25 星期一">
+              <p>content1</p>
+              <p>content1</p>
+            </Timeline.Item>
+            <Timeline.Item title="2016-10-26 星期二">
+              <p>content2</p>
+              <p>content2</p>
+            </Timeline.Item>
+            <Timeline.Item title="2016-10-27 星期三">
+              <p>content3</p>
+              <p>content3</p>
+            </Timeline.Item>
+          </Timeline>
+        </div>
+        <div style={{ display: 'inline-block', verticalAlign: 'top', margin: '50px' }}>
+          当前时间节点
+          <br />
+          <br />
+          <Timeline>
+            <Timeline.Item title="2016-10-25 星期一">
+              <p>content1</p>
+              <p>content1</p>
+            </Timeline.Item>
+            <Timeline.Item title="2016-10-26 星期二" active>
+              <p>content2</p>
+              <p>content2</p>
+            </Timeline.Item>
+            <Timeline.Item title="2016-10-27 星期三">
+              <p>content3</p>
+              <p>content3</p>
+            </Timeline.Item>
+          </Timeline>
+        </div>
+        <div style={{ display: 'inline-block', verticalAlign: 'top', margin: '50px' }}>
+          自定义颜色线条
+          <br />
+          <br />
+          <Timeline>
+            <Timeline.Item color="green" title="2016-10-25 星期一">
+              <p>content2</p>
+              <p>content2</p>
+            </Timeline.Item>
+            <Timeline.Item color="blue" title="2016-10-26 星期二">
+              <p>content3</p>
+              <p>content3</p>
+            </Timeline.Item>
+            <Timeline.Item color="red" title="2016-10-27 星期三">
+              <p>content4</p>
+              <p>content4</p>
+            </Timeline.Item>
+          </Timeline>
+        </div>
+        <div style={{ display: 'inline-block', verticalAlign: 'top', margin: '50px' }}>
+          扩展功能：附加节点、虚线模式、自定义icon
+          <br />
+          <br />
+          <Timeline pending={<a>To do</a>}>
+            <Timeline.Item title="2016-10-25 星期一" dotted>
+              <p>content1</p>
+              <p>content1</p>
+            </Timeline.Item>
+            <Timeline.Item title="2016-10-26 星期二" dot={<Icon name="shezhi" />}>
+              <p>content2</p>
+              <p>content2</p>
+            </Timeline.Item>
+            <Timeline.Item title="2016-10-27 星期三">
+              <p>content3</p>
+              <p>content3</p>
+            </Timeline.Item>
+          </Timeline>
+        </div>
       </div>
     );
   }

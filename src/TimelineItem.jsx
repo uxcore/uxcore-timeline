@@ -24,31 +24,39 @@ class TimelineItem extends React.Component {
       [`${prefixCls}-item-last`]: me.props.last,
       [`${prefixCls}-item-pending`]: me.props.pending,
       [`${prefixCls}-item-dotted`]: me.props.dotted,
-      [`${prefixCls}-item-${me.props.color}`]: true,
+      [`${prefixCls}-item-active`]: me.props.active,
       [me.props.className]: me.props.className,
     });
 
     const dotClassName = classnames({
-      [`${prefixCls}-item-head`]: true,
-      [`${prefixCls}-item-head-custom`]: me.state.dot,
+      [`${prefixCls}-item-icon`]: true,
+      [`${prefixCls}-item-icon-custom`]: me.state.dot,
     });
 
     return (
       <li className={itemClassName}>
-        <div className={`${prefixCls}-item-tail`}
+        <div
+          className={`${prefixCls}-item-line`}
           style={{
-            borderColor: /orange|blue|gray|green/.test(me.props.color) ? null : me.props.color,
+            borderColor: me.props.color || null,
           }}
         />
-        <div className={dotClassName} >
-          <div className={`${prefixCls}-item-head-icon`}
-            style={{
-              backgroundColor: /orange|blue|gray|green/.test(me.props.color) ? null : me.props.color,
-            }}
-          >
-            {me.state.dot}
-          </div>
+        <div
+          className={dotClassName}
+          style={{
+            backgroundColor: me.props.color || null,
+          }}
+        >
+          {me.state.dot}
         </div>
+        {me.props.title ? <div
+          className={`${prefixCls}-item-title`}
+          style={{
+            color: me.props.color || null,
+          }}
+        >
+          {me.props.title}
+        </div> : null}
         <div className={`${prefixCls}-item-content`}>
           {me.props.children}
         </div>
@@ -59,13 +67,14 @@ class TimelineItem extends React.Component {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 TimelineItem.defaultProps = {
-  pending: false, // 'zh-cn'、'en'
+  pending: false,
   prefixCls: 'kuma-timeline',
   className: '', // 额外的className
   last: false, // 是否最后一个
-  color: 'orange',  // 圆圈颜色,blue/red/green
+  color: '', // 自定义颜色
   dotted: false, // 自定义实线虚线
-
+  active: false, // 进行中的时间节点
+  title: '',
 };
 
 TimelineItem.propTypes = {
@@ -75,6 +84,15 @@ TimelineItem.propTypes = {
   last: React.PropTypes.bool,
   color: React.PropTypes.string,
   dotted: React.PropTypes.bool,
+  active: React.PropTypes.bool,
+  title: React.PropTypes.oneOfType([
+    React.PropTypes.element,
+    React.PropTypes.string,
+  ]),
+  dot: React.PropTypes.oneOfType([
+    React.PropTypes.element,
+    React.PropTypes.string,
+  ]),
 };
 
 TimelineItem.displayName = 'Timeline';
