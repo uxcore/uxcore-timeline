@@ -2,7 +2,7 @@
 
 ## 0.2.1
 
-* `FIX` React 15.x compatible
+* `FIXED` React 15.x compatible
 
 ## 0.2.0
 
