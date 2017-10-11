@@ -2,14 +2,35 @@
  * Timeline Component for uxcore
  * @author muwen.lb
  *
- * Copyright 2015-2016, Uxcore Team, Alinw.
+ * Copyright 2015-2017, Uxcore Team, Alinw.
  * All rights reserved.
  */
-const React = require('react');
-const classnames = require('classnames');
-const TimelineItem = require('./TimelineItem');
+import React from 'react';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import TimelineItem from './TimelineItem';
 
-class Timeline extends React.Component {
+
+export default class Timeline extends React.Component {
+  static defaultProps = {
+    className: '',
+    prefixCls: 'kuma-timeline',
+  };
+
+  static propTypes = {
+    className: PropTypes.string,
+    prefixCls: PropTypes.string,
+    pending: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+    children: PropTypes.any,
+  };
+
+  static Item = TimelineItem;
+
+  static displayName = 'Timeline';
   constructor(props) {
     super(props);
     this.state = {
@@ -18,19 +39,18 @@ class Timeline extends React.Component {
   }
 
   render() {
-    const me = this;
-    const prefixCls = me.props.prefixCls;
-    const pending = me.state.pending;
+    const prefixCls = this.props.prefixCls;
+    const pending = this.state.pending;
     const timelineClassName = classnames({
       [prefixCls]: true,
-      [me.props.className]: me.props.className,
+      [this.props.className]: this.props.className,
     });
     return (
       <div className={timelineClassName}>
         <ul className={pending ? `${prefixCls}-pending` : ''}>
           {
-            React.Children.map(me.props.children, (ele, idx) => React.cloneElement(ele, {
-              last: idx === me.props.children.length - 1,
+            React.Children.map(this.props.children, (ele, idx) => React.cloneElement(ele, {
+              last: idx === this.props.children.length - 1,
             }))
           }
           {(pending) ? <TimelineItem pending color="gray">{pending}</TimelineItem> : null}
@@ -40,24 +60,3 @@ class Timeline extends React.Component {
   }
 }
 
-// http://facebook.github.io/react/docs/reusable-components.html
-Timeline.defaultProps = {
-  className: '',
-  prefixCls: 'kuma-timeline',
-};
-
-Timeline.propTypes = {
-  className: React.PropTypes.string,
-  prefixCls: React.PropTypes.string,
-  pending: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]),
-};
-
-Timeline.Item = TimelineItem;
-
-Timeline.displayName = 'Timeline';
-
-module.exports = Timeline;

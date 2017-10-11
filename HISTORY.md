@@ -1,5 +1,9 @@
 # history
 
+## 0.2.1
+
+* `FIX` React 15.x compatible
+
 ## 0.2.0
 
 * `NEW` add new props `dotted`, `active` & `title`
