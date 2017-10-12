@@ -2,13 +2,47 @@
  * Timeline Component for uxcore
  * @author muwen.lb
  *
- * Copyright 2015-2016, Uxcore Team, Alinw.
+ * Copyright 2015-2017, Uxcore Team, Alinw.
  * All rights reserved.
  */
-const React = require('react');
-const classnames = require('classnames');
+import React, { Component } from 'react';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
-class TimelineItem extends React.Component {
+export default class TimelineItem extends Component {
+
+  static displayName = 'Timeline';
+
+  static defaultProps = {
+    pending: false,
+    prefixCls: 'kuma-timeline',
+    className: '', // 额外的className
+    last: false, // 是否最后一个
+    color: '', // 自定义颜色
+    dotted: false, // 自定义实线虚线
+    active: false, // 进行中的时间节点
+    title: '',
+  };
+
+  static propTypes = {
+    pending: PropTypes.bool,
+    prefixCls: PropTypes.string,
+    className: PropTypes.string,
+    last: PropTypes.bool,
+    color: PropTypes.string,
+    dotted: PropTypes.bool,
+    active: PropTypes.bool,
+    title: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.string,
+    ]),
+    dot: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.string,
+    ]),
+    children: PropTypes.any,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,20 +51,19 @@ class TimelineItem extends React.Component {
   }
 
   render() {
-    const me = this;
-    const prefixCls = me.props.prefixCls;
+    const prefixCls = this.props.prefixCls;
     const itemClassName = classnames({
       [`${prefixCls}-item`]: true,
-      [`${prefixCls}-item-last`]: me.props.last,
-      [`${prefixCls}-item-pending`]: me.props.pending,
-      [`${prefixCls}-item-dotted`]: me.props.dotted,
-      [`${prefixCls}-item-active`]: me.props.active,
-      [me.props.className]: me.props.className,
+      [`${prefixCls}-item-last`]: this.props.last,
+      [`${prefixCls}-item-pending`]: this.props.pending,
+      [`${prefixCls}-item-dotted`]: this.props.dotted,
+      [`${prefixCls}-item-active`]: this.props.active,
+      [this.props.className]: this.props.className,
     });
 
     const dotClassName = classnames({
       [`${prefixCls}-item-icon`]: true,
-      [`${prefixCls}-item-icon-custom`]: me.state.dot,
+      [`${prefixCls}-item-icon-custom`]: this.state.dot,
     });
 
     return (
@@ -38,63 +71,30 @@ class TimelineItem extends React.Component {
         <div
           className={`${prefixCls}-item-line`}
           style={{
-            borderColor: me.props.color || null,
+            borderColor: this.props.color || null,
           }}
         />
         <div
           className={dotClassName}
           style={{
-            backgroundColor: me.props.color || null,
+            backgroundColor: this.props.color || null,
           }}
         >
-          {me.state.dot}
+          {this.state.dot}
         </div>
-        {me.props.title ? <div
+        {this.props.title ? <div
           className={`${prefixCls}-item-title`}
           style={{
-            color: me.props.color || null,
+            color: this.props.color || null,
           }}
         >
-          {me.props.title}
+          {this.props.title}
         </div> : null}
         <div className={`${prefixCls}-item-content`}>
-          {me.props.children}
+          {this.props.children}
         </div>
       </li>
     );
   }
 }
 
-// http://facebook.github.io/react/docs/reusable-components.html
-TimelineItem.defaultProps = {
-  pending: false,
-  prefixCls: 'kuma-timeline',
-  className: '', // 额外的className
-  last: false, // 是否最后一个
-  color: '', // 自定义颜色
-  dotted: false, // 自定义实线虚线
-  active: false, // 进行中的时间节点
-  title: '',
-};
-
-TimelineItem.propTypes = {
-  pending: React.PropTypes.bool,
-  prefixCls: React.PropTypes.string,
-  className: React.PropTypes.string,
-  last: React.PropTypes.bool,
-  color: React.PropTypes.string,
-  dotted: React.PropTypes.bool,
-  active: React.PropTypes.bool,
-  title: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.string,
-  ]),
-  dot: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.string,
-  ]),
-};
-
-TimelineItem.displayName = 'Timeline';
-
-module.exports = TimelineItem;

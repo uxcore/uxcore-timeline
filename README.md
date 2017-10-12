@@ -75,15 +75,15 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 
 ```jsx
 <Timeline>
-    <Timeline.Item title='2016-10-25'>
+    <Timeline.Item title='2017-10-25'>
         <p>content1</p>
         <p>content1</p>
     </Timeline.Item>
-    <Timeline.Item title='2016-10-26' active>
+    <Timeline.Item title='2017-10-26' active>
         <p>content2</p>
         <p>content2</p>
     </Timeline.Item>
-    <Timeline.Item title='2016-10-27'>
+    <Timeline.Item title='2017-10-27'>
         <p>content3</p>
         <p>content3</p>
     </Timeline.Item>
