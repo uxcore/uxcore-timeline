@@ -27,6 +27,8 @@ describe('Timeline', () => {
       </Timeline.Item>
     </Timeline>);
     expect(wrapper.find('.uxicon-shezhi')).to.have.length(1);
+    expect(wrapper.find('.kuma-timeline-item-title')).to.have.length(3);
+    expect(wrapper.find('.kuma-timeline-item-dotted')).to.have.length(1);
     expect(wrapper.find(Timeline)).to.have.length(1);
     expect(wrapper.contains(<a>To do</a>)).to.equal(true);
   });
