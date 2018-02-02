@@ -11,11 +11,9 @@ import Icon from 'uxcore-icon';
 import Timeline from '../src';
 
 export default class Demo extends Component {
-
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
@@ -82,7 +80,7 @@ export default class Demo extends Component {
           扩展功能：附加节点、虚线模式、自定义icon
           <br />
           <br />
-          <Timeline pending={<a>To do</a>}>
+          <Timeline pending={<a href="javascript:;">To do</a>}>
             <Timeline.Item title="2017-10-25 星期一" dotted>
               <p>content1</p>
               <p>content1</p>
@@ -101,4 +99,3 @@ export default class Demo extends Component {
     );
   }
 }
-
