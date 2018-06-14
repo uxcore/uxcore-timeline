@@ -41,7 +41,7 @@
   "react-test-renderer": "16.x",
   "uxcore-icon": "0.1.x",
   "uxcore-kuma": "*",
-  "uxcore-tools": "0.2.x",
+  "uxcore-tools": "0.3.x",
   "babel-polyfill": "6.x",
   "enzyme-adapter-react-16": "1.x"
  },
