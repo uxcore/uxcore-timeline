@@ -13,15 +13,15 @@ describe('Timeline', () => {
   });
   it('props', () => {
     const wrapper = mount(<Timeline pending={<a>To do</a>}>
-      <Timeline.Item title="2017-10-25 星期一" dotted>
+      <Timeline.Item title="2018-10-25 星期一" dotted>
         <p>content1</p>
         <p>content1</p>
       </Timeline.Item>
-      <Timeline.Item title="2017-10-26 星期二" dot={<Icon name="shezhi" />}>
+      <Timeline.Item title="2018-10-26 星期二" dot={<Icon name="shezhi" />}>
         <p>content2</p>
         <p>content2</p>
       </Timeline.Item>
-      <Timeline.Item title="2017-10-27 星期三">
+      <Timeline.Item title="2018-10-27 星期三">
         <p>content3</p>
         <p>content3</p>
       </Timeline.Item>

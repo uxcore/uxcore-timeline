@@ -2,7 +2,7 @@
  * Timeline Component Demo for uxcore
  * @author muwen.lb
  *
- * Copyright 2015-2017, Uxcore Team, Alinw.
+ * Copyright 2015-2018, Uxcore Team, Alinw.
  * All rights reserved.
  */
 
@@ -24,15 +24,15 @@ export default class Demo extends Component {
           <br />
           <br />
           <Timeline>
-            <Timeline.Item title="2017-10-25 星期一">
+            <Timeline.Item title="2018-10-25 星期一">
               <p>content1</p>
               <p>content1</p>
             </Timeline.Item>
-            <Timeline.Item title="2017-10-26 星期二">
+            <Timeline.Item title="2018-10-26 星期二">
               <p>content2</p>
               <p>content2</p>
             </Timeline.Item>
-            <Timeline.Item title="2017-10-27 星期三">
+            <Timeline.Item title="2018-10-27 星期三">
               <p>content3</p>
               <p>content3</p>
             </Timeline.Item>
@@ -43,15 +43,15 @@ export default class Demo extends Component {
           <br />
           <br />
           <Timeline>
-            <Timeline.Item title="2017-10-25 星期一">
+            <Timeline.Item title="2018-10-25 星期一">
               <p>content1</p>
               <p>content1</p>
             </Timeline.Item>
-            <Timeline.Item title="2017-10-26 星期二" active>
+            <Timeline.Item title="2018-10-26 星期二" active>
               <p>content2</p>
               <p>content2</p>
             </Timeline.Item>
-            <Timeline.Item title="2017-10-27 星期三">
+            <Timeline.Item title="2018-10-27 星期三">
               <p>content3</p>
               <p>content3</p>
             </Timeline.Item>
@@ -62,15 +62,15 @@ export default class Demo extends Component {
           <br />
           <br />
           <Timeline>
-            <Timeline.Item color="green" title="2017-10-25 星期一">
+            <Timeline.Item color="green" title="2018-10-25 星期一">
               <p>content2</p>
               <p>content2</p>
             </Timeline.Item>
-            <Timeline.Item color="blue" title="2017-10-26 星期二">
+            <Timeline.Item color="blue" title="2018-10-26 星期二">
               <p>content3</p>
               <p>content3</p>
             </Timeline.Item>
-            <Timeline.Item color="red" title="2017-10-27 星期三">
+            <Timeline.Item color="red" title="2018-10-27 星期三">
               <p>content4</p>
               <p>content4</p>
             </Timeline.Item>
@@ -81,15 +81,15 @@ export default class Demo extends Component {
           <br />
           <br />
           <Timeline pending={<a href="javascript:;">To do</a>}>
-            <Timeline.Item title="2017-10-25 星期一" dotted>
+            <Timeline.Item title="2018-10-25 星期一" dotted>
               <p>content1</p>
               <p>content1</p>
             </Timeline.Item>
-            <Timeline.Item title="2017-10-26 星期二" dot={<Icon name="shezhi" />}>
+            <Timeline.Item title="2018-10-26 星期二" dot={<Icon name="shezhi" />}>
               <p>content2</p>
               <p>content2</p>
             </Timeline.Item>
-            <Timeline.Item title="2017-10-27 星期三">
+            <Timeline.Item title="2018-10-27 星期三">
               <p>content3</p>
               <p>content3</p>
             </Timeline.Item>

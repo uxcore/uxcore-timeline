@@ -1,5 +1,9 @@
 # history
 
+## 0.2.4
+
+* `FIXED` React 16.x compatible
+
 ## 0.2.3
 
 * `CHANGED` UI Upgrade
