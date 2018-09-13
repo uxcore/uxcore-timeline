@@ -97,4 +97,3 @@ export default class TimelineItem extends Component {
     );
   }
 }
-
