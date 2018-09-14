@@ -6,9 +6,8 @@
  * All rights reserved.
  */
 
- 
-@prefix-cls: kuma-timeline;
-.@{prefix-cls} {
+@__timelinePrefixCls: kuma-timeline;
+.@{__timelinePrefixCls} {
   color: @normal-alpha-4;
   &-item {
     position: relative;
@@ -54,7 +53,7 @@
       line-height: 20px;
     }
     &-last {
-      .@{prefix-cls}-item-line {
+      .@{__timelinePrefixCls}-item-line {
         display: none;
       }
     }

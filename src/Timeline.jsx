@@ -59,4 +59,3 @@ export default class Timeline extends React.Component {
     );
   }
 }
-
